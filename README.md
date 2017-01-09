@@ -1,2 +1,2 @@
-# wordpress-portfolio-theme
-WordPress version of my Static Portfolio Theme
+# WordPress Portfolio Theme
+WordPress version of my [Static Portfolio Theme](https://github.com/WojtekWernicki/static-portfolio-theme)
