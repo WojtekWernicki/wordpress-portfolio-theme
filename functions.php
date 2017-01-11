@@ -1,5 +1,7 @@
 <?php
 
+require_once('inc/bootstrap_menu.php');
+
 add_theme_support('post-thumbnails');
 
 function register_wpt_menus() {
