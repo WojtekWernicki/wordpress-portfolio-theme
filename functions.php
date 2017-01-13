@@ -1,6 +1,7 @@
 <?php
 
 require_once('inc/bootstrap_menu.php');
+require_once('inc/theme_customization.php');
 
 add_theme_support('post-thumbnails');
 

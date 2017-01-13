@@ -1,7 +1,7 @@
 <?php get_header(); ?>
     <div class="section" id="top">
         <div class="parallax">
-            <img src="src/img/avatar.jpg" alt="Avatar">
+            <img src="<?php echo get_theme_mod( 'avatar_image_url', get_template_directory_uri().'/assets/img/avatar.jpg' ) ?>" alt="Avatar">
             <h1 class="text-center">Siema! <br>
                 <small>Jestem Wojtek, web developer</small>
             </h1>
