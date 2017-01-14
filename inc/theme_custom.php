@@ -108,6 +108,46 @@
              'transport' => 'postMessage',
             )
         );
+        $wp_customize->add_setting( 'fp_about_subheader_edu',
+        array(
+             'default' => 'Edukacja',
+             'type' => 'theme_mod',
+             'capability' => 'edit_theme_options',
+             'transport' => 'postMessage',
+            )
+        );
+        $wp_customize->add_setting( 'fp_about_subheader_more',
+        array(
+             'default' => 'Więcej informacji o mnie',
+             'type' => 'theme_mod',
+             'capability' => 'edit_theme_options',
+             'transport' => 'postMessage',
+            )
+        );
+        $wp_customize->add_setting( 'fp_about_subheader_download',
+        array(
+             'default' => 'Pliki do pobrania:',
+             'type' => 'theme_mod',
+             'capability' => 'edit_theme_options',
+             'transport' => 'postMessage',
+            )
+        );
+        $wp_customize->add_setting( 'fp_about_about_textarea',
+        array(
+             'default' => '',
+             'type' => 'theme_mod',
+             'capability' => 'edit_theme_options',
+             'transport' => 'postMessage',
+            )
+        );
+        $wp_customize->add_setting( 'fp_about_work_textarea',
+        array(
+             'default' => '',
+             'type' => 'theme_mod',
+             'capability' => 'edit_theme_options',
+             'transport' => 'postMessage',
+            )
+        );
 
         /**
          * III. Creating controls
@@ -142,7 +182,7 @@
                 'section' => 'fp_top',
                 'settings' => 'fp_top_header_small',
                 'type' => 'text',
-                'priority' => 35
+                'priority' => 40
             )
         );
         /* fp_about (About Me Section) */
@@ -159,16 +199,72 @@
         );
         $wp_customize->add_control( new WP_Customize_Control()
             $wp_customize,
+            'fp_about_control_about_textarea',
+            array(
+                'label' => __( 'About Me Textarea', 'wpt' ),
+                'section' => 'fp_about',
+                'settings' => 'fp_about_about_textarea',
+                'type' => 'textarea',
+                'priority' => 35
+            )
+        );
+        $wp_customize->add_control( new WP_Customize_Control()
+            $wp_customize,
             'fp_about_control_subheader_work',
             array(
                 'label' => __( 'Subheader Work Text', 'wpt' ),
                 'section' => 'fp_about',
                 'settings' => 'fp_about_subheader_work',
                 'type' => 'text',
-                'priority' => 35,
+                'priority' => 40,
             )
         );
-     }
- }
+        $wp_customize->add_control( new WP_Customize_Control()
+            $wp_customize,
+            'fp_about_control_work_textarea',
+            array(
+                'label' => __( 'Work Textarea', 'wpt' ),
+                'section' => 'fp_about',
+                'settings' => 'fp_about_work_textarea',
+                'type' => 'textarea',
+                'priority' => 45
+            )
+        );
+        $wp_customize->add_control( new WP_Customize_Control()
+            $wp_customize,
+            'fp_about_control_subheader_edu',
+            array(
+                'label' => __( 'Subheader Education Text', 'wpt' ),
+                'section' => 'fp_about',
+                'settings' => 'fp_about_subheader_edu',
+                'type' => 'text',
+                'priority' => 40,
+            )
+        );
+        $wp_customize->add_control( new WP_Customize_Control()
+            $wp_customize,
+            'fp_about_control_subheader_more',
+            array(
+                'label' => __( 'Subheader More Info Text', 'wpt' ),
+                'section' => 'fp_about',
+                'settings' => 'fp_about_subheader_work',
+                'type' => 'text',
+                'priority' => 45,
+            )
+        );
+        $wp_customize->add_control( new WP_Customize_Control()
+            $wp_customize,
+            'fp_about_control_subheader_download',
+            array(
+                'label' => __( 'Subheader Download Text', 'wpt' ),
+                'section' => 'fp_about',
+                'settings' => 'fp_about_subheader_download',
+                'type' => 'text',
+                'priority' => 50,
+            )
+        );
+
+    }
+}
 
 ?>

@@ -21,7 +21,7 @@ class wpt_customization {
          * I. Creating sections
          */
         //1. Define Parallax backgrounds section
-        $wp_customize->add_section( 'parallax_backgrounds', 
+        $wp_customize->add_section( 'parallax_backgrounds',
             array(
                 'title' => __( 'Parallax Backgrounds', 'wpt' ),
                 'priority' => 30,
@@ -30,7 +30,7 @@ class wpt_customization {
             )
         );
         //2. Define Avatar image section
-        $wp_customize->add_section( 'avatar_image', 
+        $wp_customize->add_section( 'avatar_image',
             array(
                 'title' => __( 'Avatar Image', 'wpt' ),
                 'priority' => 35,
@@ -39,7 +39,7 @@ class wpt_customization {
             )
         );
         //3. Define Social Media links section
-        $wp_customize->add_section( 'social_media_links', 
+        $wp_customize->add_section( 'social_media_links',
             array(
                 'title' => __( 'Social Media Links', 'wpt' ),
                 'priority' => 40,
@@ -48,7 +48,7 @@ class wpt_customization {
             )
         );
         //4. Define Footer  section
-        $wp_customize->add_section( 'footer_section', 
+        $wp_customize->add_section( 'footer_section',
             array(
                 'title' => __( 'Footer', 'wpt' ),
                 'priority' => 45,
@@ -56,7 +56,7 @@ class wpt_customization {
                 'description' => __( 'Allows you to change Footer text.', 'wpt' ),
             )
         );
-        
+
         /**
          * II. Creating settings
          */
@@ -168,7 +168,7 @@ class wpt_customization {
                 'transport' => 'postMessage',
             )
         );
-        
+
         /**
          * III. Creating controls
          */
@@ -332,7 +332,7 @@ class wpt_customization {
      *
      * @see add_action('wp_head',$func)
      * @since WordPress Portfolio Theme 0.1.0
-     */        
+     */
     function header_output() {
     ?>
     <!--Customizer CSS-->
@@ -340,7 +340,7 @@ class wpt_customization {
         #top .parallax { background-image: url('<?php echo get_theme_mod( 'parallax_background_intro', get_template_directory_uri().'/assets/img/triangle.jpg' ); ?>'); }
         #wspolpraca .parallax { background-image: url('<?php echo get_theme_mod( 'parallax_background_cooperation', get_template_directory_uri().'/assets/img/wspolpraca.jpg' ); ?>'); }
         #skill .parallax { background-image: url('<?php echo get_theme_mod( 'parallax_background_skill', get_template_directory_uri().'/assets/img/computer.jpg' ); ?>'); }
-    </style> 
+    </style>
     <!--/Customizer CSS-->
     <?php
     }
@@ -351,11 +351,5 @@ add_action( 'customize_register' , array( 'wpt_customization' , 'register' ) );
 
 // Output custom CSS to live site
 add_action( 'wp_head' , array( 'wpt_customization', 'header_output' ) );
-
-/**
- *
- *  Warning: call_user_func_array() expects parameter 1 to be a valid callback, class 'wpt_customization' does not have a method 'header_output' in C:\xampp\htdocs\wpt\wp-includes\class-wp-hook.php on line 298
- *
- */
 
 ?>
