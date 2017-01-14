@@ -1,7 +1,7 @@
 <?php get_header(); ?>
     <div class="section" id="top">
         <div class="parallax">
-            <img src="<?php echo get_theme_mod( 'avatar_image_url', get_template_directory_uri().'/assets/img/avatar.jpg' ) ?>" alt="Avatar">
+            <img src="<?= get_theme_mod( 'avatar_image_url', get_template_directory_uri().'/assets/img/avatar.jpg' ) ?>" alt="Avatar">
             <h1 class="text-center">Siema! <br>
                 <small>Jestem Wojtek, web developer</small>
             </h1>
@@ -31,7 +31,7 @@
                         <ul>
                             <li>
                                 Free Code Camp <br>
-                                <strong>Full Stack Web Development Certification</strong>, 2016 &ndash; nadal 
+                                <strong>Full Stack Web Development Certification</strong>, 2016 &ndash; nadal
                             </li>
                             <li>
                                 Technikum Informatyczne SCI w Szczecinie <br>
@@ -42,26 +42,26 @@
                     </div>
                     <div class="col-xs-12 col-md-6 text-center">
                         <h3>Więcej informacji o mnie:</h3>
-                        
+
                         <div class="flexbox-container">
                             <a href="javascript:void(0)">
                                 <i class="fa fa-linkedin fa-5x"></i>
                                 <small>LinkedIn</small>
-                            </a>                        
+                            </a>
                             <a href="javascript:void(0)">
                                 <i class="fa fa-desktop fa-5x"></i>
                                 <small>Blog</small>
                             </a>
-                            
+
                             <a href="#wspolpraca">
                                 <i class="fa fa-question fa-5x"></i>
                                 <small>Zobacz więcej</small>
                             </a>
                         </div>
-                        
+
                         <h3>Pliki do pobrania:</h3>
                         <a href="javascript:void(0)" class="btn btn-primary btn-lg" role="button"><i class="fa fa-download fa-fw"></i> Pobierz CV</a>
-                    </div>                
+                    </div>
                 </div>
             </div>
         </div>
@@ -167,7 +167,7 @@
     <div class="section" id="skill">
         <div class="parallax">
             <div class="container">
-                <div class="row">                
+                <div class="row">
                     <div class="col-xs-12 blue-frame">
                         <h2 class="text-center">Umiejętności</h2>
                         <div class="col-xs-12 col-md-6 text-center">
@@ -178,7 +178,7 @@
                                 <li><strong>SASS</strong></li>
                                 <li><strong>JavaScript</strong></li>
                             </ul>
-                            
+
                             <h3>Back-end Development</h3>
                             <ul class="list-unstyled">
                                 <li><strong>PHP7</strong></li>
@@ -254,27 +254,27 @@
                         <div class="col-xs-12 col-md-6 text-center">
                             <h3>Social Media</h3>
                             <div class="flexbox-container">
-                                <a href="javascript:void(0)">
+                                <a href="<?= get_theme_mod( 'social_media_link_fb', 'https://facebook.com/' ); ?>">
                                     <i class="fa fa-facebook fa-5x"></i>
                                     <small>Facebook</small>
-                                </a>                        
-                                <a href="javascript:void(0)">
+                                </a>
+                                <a href="<?= get_theme_mod( 'social_media_link_tt', 'https://twitter.com/' ); ?>">
                                     <i class="fa fa-twitter fa-5x"></i>
                                     <small>Twitter</small>
                                 </a>
-                                <a href="javascript:void(0)">
+                                <a href="<?= get_theme_mod( 'social_media_link_ig', 'https://instagram.com/' ); ?>">
                                     <i class="fa fa-instagram fa-5x"></i>
                                     <small>Instagram</small>
                                 </a>
-                                <a href="javascript:void(0)">
+                                <a href="<?= get_theme_mod( 'social_media_link_gp', 'https://plus.google.com/' ); ?>">
                                     <i class="fa fa-google-plus fa-5x"></i>
                                     <small>Google+</small>
                                 </a>
-                                <a href="javascript:void(0)">
+                                <a href="<?= get_theme_mod( 'social_media_link_in', 'https://linkedin.com/' ); ?>">
                                     <i class="fa fa-linkedin fa-5x"></i>
                                     <small>LinkedIn</small>
                                 </a>
-                                <a href="javascript:void(0)">
+                                <a href="<?= get_theme_mod( 'social_media_link_sc', 'https://snapchat.com/' ); ?>">
                                     <i class="fa fa-snapchat fa-5x"></i>
                                     <small>Snapchat</small>
                                 </a>
@@ -282,17 +282,16 @@
                         </div>
                     </div>
                 </div>
-            </div>            
+            </div>
         </div>
         <footer>
             <div id="copy">
-                &copy; 2017 Wojtek Wernicki | 
-                <a href="https://github.com/WojtekWernicki/static-portfolio-theme" target="_blank"><i class="fa fa-github"></i> GitHub</a>
+                <?= get_theme_mod( 'footer_section_copy', '&copy; 2017 Wojtek Wernicki' ); ?>
             </div>
-            <div id="cookies">Ta strona używa plików cookies do celów statystycznych.</div>
+            <div id="cookies"><?= get_theme_mod( 'footer_section_cookies', 'Ta strona używa plików cookies do celów statystycznych.' ) ?></div>
         </footer>
     </div>
-    
+
     <div class="modal fade portfolio-modal" id="portfolio-item-1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -302,9 +301,9 @@
                 <div class="container">
                     <div class="row">
                         <h2 class="text-center">Contact Form</h2>
-                        
+
                         <img src="" alt="Contact Form" class="img-responsive lazy-load" data-src="src/img/contact-form.png">
-                        
+
                         <div class="text-center">
                             <p>
                                 Used technologies:
@@ -312,7 +311,7 @@
                             </p>
                             <p>December 2016</p>
                         </div>
-                        
+
                         <div class="text-center buttons">
                             <a href="https://github.com/WojtekWernicki/contact-form" target="_blank" class="btn btn-primary" role="button">
                                 <i class="fa fa-github fa-fw"></i> GitHub
