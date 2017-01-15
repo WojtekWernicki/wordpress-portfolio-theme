@@ -124,9 +124,25 @@
              'transport' => 'postMessage',
             )
         );
+        $wp_customize->add_setting( 'fp_about_more_bloglink',
+        array(
+             'default' => '/blog',
+             'type' => 'theme_mod',
+             'capability' => 'edit_theme_options',
+             'transport' => 'postMessage',
+            )
+        );
         $wp_customize->add_setting( 'fp_about_subheader_download',
         array(
              'default' => 'Pliki do pobrania:',
+             'type' => 'theme_mod',
+             'capability' => 'edit_theme_options',
+             'transport' => 'postMessage',
+            )
+        );
+        $wp_customize->add_setting( 'fp_about_download_file',
+        array(
+             'default' => '',
              'type' => 'theme_mod',
              'capability' => 'edit_theme_options',
              'transport' => 'postMessage',
@@ -148,22 +164,31 @@
              'transport' => 'postMessage',
             )
         );
+        $wp_customize->add_setting( 'fp_about_edu_textarea',
+        array(
+             'default' => '',
+             'type' => 'theme_mod',
+             'capability' => 'edit_theme_options',
+             'transport' => 'postMessage',
+            )
+        );
 
         /**
          * III. Creating controls
          */
         /* fp_top (Top Section) */
-        $wp_customize->add_control( new WP_Customize_Image_Control()
+        $wp_customize->add_control( new WP_Customize_Image_Control(
             $wp_customize,
             'fp_top_control_avatar',
             array(
                 'label' => __( 'Avatar Image', 'wpt' ),
                 'section' => 'fp_top',
                 'settings' => 'fp_top_avatar',
-                'priority' => 30
+                'priority' => 30,
+                )
             )
         );
-        $wp_customize->add_control( new WP_Customize_Control()
+        $wp_customize->add_control( new WP_Customize_Control(
             $wp_customize,
             'fp_top_control_header',
             array(
@@ -171,10 +196,11 @@
                 'section' => 'fp_top',
                 'settings' => 'fp_top_header',
                 'type' => 'text',
-                'priority' => 35
+                'priority' => 35,
+                )
             )
         );
-        $wp_customize->add_control( new WP_Customize_Control()
+        $wp_customize->add_control( new WP_Customize_Control(
             $wp_customize,
             'fp_top_control_header_small',
             array(
@@ -182,11 +208,12 @@
                 'section' => 'fp_top',
                 'settings' => 'fp_top_header_small',
                 'type' => 'text',
-                'priority' => 40
+                'priority' => 40,
+                )
             )
         );
         /* fp_about (About Me Section) */
-        $wp_customize->add_control( new WP_Customize_Control()
+        $wp_customize->add_control( new WP_Customize_Control(
             $wp_customize,
             'fp_about_control_header',
             array(
@@ -194,10 +221,11 @@
                 'section' => 'fp_about',
                 'settings' => 'fp_about_header',
                 'type' => 'text',
-                'priority' => 30
+                'priority' => 30,
+                )
             )
         );
-        $wp_customize->add_control( new WP_Customize_Control()
+        $wp_customize->add_control( new WP_Customize_Control(
             $wp_customize,
             'fp_about_control_about_textarea',
             array(
@@ -205,10 +233,11 @@
                 'section' => 'fp_about',
                 'settings' => 'fp_about_about_textarea',
                 'type' => 'textarea',
-                'priority' => 35
+                'priority' => 35,
+                )
             )
         );
-        $wp_customize->add_control( new WP_Customize_Control()
+        $wp_customize->add_control( new WP_Customize_Control(
             $wp_customize,
             'fp_about_control_subheader_work',
             array(
@@ -217,9 +246,10 @@
                 'settings' => 'fp_about_subheader_work',
                 'type' => 'text',
                 'priority' => 40,
+                )
             )
         );
-        $wp_customize->add_control( new WP_Customize_Control()
+        $wp_customize->add_control( new WP_Customize_Control(
             $wp_customize,
             'fp_about_control_work_textarea',
             array(
@@ -227,10 +257,11 @@
                 'section' => 'fp_about',
                 'settings' => 'fp_about_work_textarea',
                 'type' => 'textarea',
-                'priority' => 45
+                'priority' => 45,
+                )
             )
         );
-        $wp_customize->add_control( new WP_Customize_Control()
+        $wp_customize->add_control( new WP_Customize_Control(
             $wp_customize,
             'fp_about_control_subheader_edu',
             array(
@@ -238,21 +269,47 @@
                 'section' => 'fp_about',
                 'settings' => 'fp_about_subheader_edu',
                 'type' => 'text',
-                'priority' => 40,
+                'priority' => 50,
+                )
             )
         );
-        $wp_customize->add_control( new WP_Customize_Control()
+        $wp_customize->add_control( new WP_Customize_Control(
+            $wp_customize,
+            'fp_about_control_edu_textarea',
+            array(
+                'label' => __( 'Education Textarea', 'wpt' ),
+                'section' => 'fp_about',
+                'settings' => 'fp_about_edu_textarea',
+                'type' => 'textarea',
+                'priority' => 55,
+                )
+            )
+        );
+        $wp_customize->add_control( new WP_Customize_Control(
             $wp_customize,
             'fp_about_control_subheader_more',
             array(
                 'label' => __( 'Subheader More Info Text', 'wpt' ),
                 'section' => 'fp_about',
-                'settings' => 'fp_about_subheader_work',
+                'settings' => 'fp_about_subheader_more',
                 'type' => 'text',
-                'priority' => 45,
+                'priority' => 60,
+                )
             )
         );
-        $wp_customize->add_control( new WP_Customize_Control()
+        $wp_customize->add_control( new WP_Customize_Control(
+            $wp_customize,
+            'fp_about_control_more_bloglink',
+            array(
+                'label' => __( 'More Info Bloglink', 'wpt' ),
+                'section' => 'fp_about',
+                'settings' => 'fp_about_more_bloglink',
+                'type' => 'text',
+                'priority' => 65,
+                )
+            )
+        );
+        $wp_customize->add_control( new WP_Customize_Control(
             $wp_customize,
             'fp_about_control_subheader_download',
             array(
@@ -260,11 +317,29 @@
                 'section' => 'fp_about',
                 'settings' => 'fp_about_subheader_download',
                 'type' => 'text',
-                'priority' => 50,
+                'priority' => 70,
+                )
+            )
+        );
+        $wp_customize->add_control( new WP_Customize_Upload_Control(
+            $wp_customize,
+            'fp_about_control_download_file',
+            array(
+                'label' => __( 'Download File', 'wpt' ),
+                'section' => 'fp_about',
+                'settings' => 'fp_about_download_file',
+                'priority' => 75,
+                )
             )
         );
 
     }
 }
+
+// Setup the Theme Customizer settings and controls...
+add_action( 'customize_register' , array( 'wpt_customization' , 'register' ) );
+
+// Output custom CSS to live site
+#add_action( 'wp_head' , array( 'wpt_customization', 'header_output' ) );
 
 ?>
