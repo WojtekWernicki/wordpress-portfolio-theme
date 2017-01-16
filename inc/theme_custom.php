@@ -67,6 +67,14 @@
          * II. Creating settings
          */
         /* fp_top (Top Section) */
+        $wp_customize->add_setting( 'fp_top_background',
+        array(
+             'default' => get_template_directory_uri().'/assets/img/triangle.jpg',
+             'type' => 'theme_mod',
+             'capability' => 'edit_theme_options',
+             'transport' => 'postMessage',
+            )
+        );
         $wp_customize->add_setting( 'fp_top_avatar',
         array(
              'default' => get_template_directory_uri().'/assets/img/avatar.jpg',
@@ -172,6 +180,120 @@
              'transport' => 'postMessage',
             )
         );
+        /* fp_cooperation (Cooperation Section) */
+        $wp_customize->add_setting( 'fp_cooperation_background',
+        array(
+            'default' => get_template_directory_uri().'/assets/img/wspolpraca.jpg',
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_options',
+            'transport' => 'postMessage',
+            )
+        );
+        $wp_customize->add_setting( 'fp_cooperation_header',
+        array(
+            'default' => 'Dlaczego warto ze mną współpracować?',
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_options',
+            'transport' => 'postMessage',
+            )
+        );
+        $wp_customize->add_setting( 'fp_cooperation_subheader_1',
+        array(
+            'default' => 'Najnowsze standardy',
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_options',
+            'transport' => 'postMessage',
+            )
+        );
+        $wp_customize->add_setting( 'fp_cooperation_subheader_2',
+        array(
+            'default' => 'Komunikatywność',
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_options',
+            'transport' => 'postMessage',
+            )
+        );
+        $wp_customize->add_setting( 'fp_cooperation_subheader_3',
+        array(
+            'default' => 'Doświadczenie',
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_options',
+            'transport' => 'postMessage',
+            )
+        );
+        $wp_customize->add_setting( 'fp_cooperation_subheader_4',
+        array(
+            'default' => 'Zaangażowanie',
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_options',
+            'transport' => 'postMessage',
+            )
+        );
+        $wp_customize->add_setting( 'fp_cooperation_subheader_small_1',
+        array(
+            'default' => '',
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_options',
+            'transport' => 'postMessage',
+            )
+        );
+        $wp_customize->add_setting( 'fp_cooperation_subheader_small_2',
+        array(
+            'default' => '',
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_options',
+            'transport' => 'postMessage',
+            )
+        );
+        $wp_customize->add_setting( 'fp_cooperation_subheader_small_3',
+        array(
+            'default' => '',
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_options',
+            'transport' => 'postMessage',
+            )
+        );
+        $wp_customize->add_setting( 'fp_cooperation_subheader_small_4',
+        array(
+            'default' => '',
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_options',
+            'transport' => 'postMessage',
+            )
+        );
+        $wp_customize->add_setting( 'fp_cooperation_icon_1',
+        array(
+            'default' => 'fa-html5',
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_options',
+            'transport' => 'postMessage',
+            )
+        );
+        $wp_customize->add_setting( 'fp_cooperation_icon_2',
+        array(
+            'default' => 'fa-comments',
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_options',
+            'transport' => 'postMessage',
+            )
+        );
+        $wp_customize->add_setting( 'fp_cooperation_icon_3',
+        array(
+            'default' => 'fa-briefcase',
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_options',
+            'transport' => 'postMessage',
+            )
+        );
+        $wp_customize->add_setting( 'fp_cooperation_icon_4',
+        array(
+            'default' => 'fa-heart',
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_options',
+            'transport' => 'postMessage',
+            )
+        );
+
 
         /**
          * III. Creating controls
@@ -179,12 +301,23 @@
         /* fp_top (Top Section) */
         $wp_customize->add_control( new WP_Customize_Image_Control(
             $wp_customize,
+            'fp_top_control_background',
+            array(
+                'label' => __( 'Top Background', 'wpt' ),
+                'section' => 'fp_top',
+                'settings' => 'fp_top_background',
+                'priority' => 30,
+                )
+            )
+        );
+        $wp_customize->add_control( new WP_Customize_Image_Control(
+            $wp_customize,
             'fp_top_control_avatar',
             array(
                 'label' => __( 'Avatar Image', 'wpt' ),
                 'section' => 'fp_top',
                 'settings' => 'fp_top_avatar',
-                'priority' => 30,
+                'priority' => 35,
                 )
             )
         );
@@ -196,7 +329,7 @@
                 'section' => 'fp_top',
                 'settings' => 'fp_top_header',
                 'type' => 'text',
-                'priority' => 35,
+                'priority' => 40,
                 )
             )
         );
@@ -208,7 +341,7 @@
                 'section' => 'fp_top',
                 'settings' => 'fp_top_header_small',
                 'type' => 'text',
-                'priority' => 40,
+                'priority' => 45,
                 )
             )
         );
@@ -329,6 +462,174 @@
                 'section' => 'fp_about',
                 'settings' => 'fp_about_download_file',
                 'priority' => 75,
+                )
+            )
+        );
+        /* fp_cooperation (Cooperation Section) */
+        $wp_customize->add_control( new WP_Customize_Image_Control(
+            $wp_customize,
+            'fp_cooperation_control_background',
+            array(
+                'label' => __( 'Cooperation Background', 'wpt' ),
+                'section' => 'fp_cooperation',
+                'settings' => 'fp_cooperation_background',
+                'priority' => 30,
+                )
+            )
+        );
+        $wp_customize->add_control( new WP_Customize_Control(
+            $wp_customize,
+            'fp_cooperation_control_header',
+            array(
+                'label' => __( 'Cooperation Header Text', 'wpt' ),
+                'section' => 'fp_cooperation',
+                'settings' => 'fp_cooperation_header',
+                'type' => 'text',
+                'priority' => 35,
+                )
+            )
+        );
+        $wp_customize->add_control( new WP_Customize_Control(
+            $wp_customize,
+            'fp_cooperation_control_subheader_1',
+            array(
+                'label' => __( 'Cooperation Subheader Text 1', 'wpt' ),
+                'section' => 'fp_cooperation',
+                'settings' => 'fp_cooperation_subheader_1',
+                'type' => 'text',
+                'priority' => 40,
+                )
+            )
+        );
+        $wp_customize->add_control( new WP_Customize_Control(
+            $wp_customize,
+            'fp_cooperation_control_subheader_2',
+            array(
+                'label' => __( 'Cooperation Subheader Text 2', 'wpt' ),
+                'section' => 'fp_cooperation',
+                'settings' => 'fp_cooperation_subheader_2',
+                'type' => 'text',
+                'priority' => 45,
+                )
+            )
+        );
+        $wp_customize->add_control( new WP_Customize_Control(
+            $wp_customize,
+            'fp_cooperation_control_subheader_3',
+            array(
+                'label' => __( 'Cooperation Subheader Text 3', 'wpt' ),
+                'section' => 'fp_cooperation',
+                'settings' => 'fp_cooperation_subheader_3',
+                'type' => 'text',
+                'priority' => 50,
+                )
+            )
+        );
+        $wp_customize->add_control( new WP_Customize_Control(
+            $wp_customize,
+            'fp_cooperation_control_subheader_4',
+            array(
+                'label' => __( 'Cooperation Subheader Text 4', 'wpt' ),
+                'section' => 'fp_cooperation',
+                'settings' => 'fp_cooperation_subheader_4',
+                'type' => 'text',
+                'priority' => 55,
+                )
+            )
+        );
+        $wp_customize->add_control( new WP_Customize_Control(
+            $wp_customize,
+            'fp_cooperation_control_subheader_small_1',
+            array(
+                'label' => __( 'Cooperation Subheader Small 1', 'wpt' ),
+                'section' => 'fp_cooperation',
+                'settings' => 'fp_cooperation_subheader_small_1',
+                'type' => 'textarea',
+                'priority' => 60,
+                )
+            )
+        );
+        $wp_customize->add_control( new WP_Customize_Control(
+            $wp_customize,
+            'fp_cooperation_control_subheader_small_2',
+            array(
+                'label' => __( 'Cooperation Subheader Small 2', 'wpt' ),
+                'section' => 'fp_cooperation',
+                'settings' => 'fp_cooperation_subheader_small_2',
+                'type' => 'textarea',
+                'priority' => 65,
+                )
+            )
+        );
+        $wp_customize->add_control( new WP_Customize_Control(
+            $wp_customize,
+            'fp_cooperation_control_subheader_small_3',
+            array(
+                'label' => __( 'Cooperation Subheader Small 3', 'wpt' ),
+                'section' => 'fp_cooperation',
+                'settings' => 'fp_cooperation_subheader_small_3',
+                'type' => 'textarea',
+                'priority' => 70,
+                )
+            )
+        );
+        $wp_customize->add_control( new WP_Customize_Control(
+            $wp_customize,
+            'fp_cooperation_control_subheader_small_4',
+            array(
+                'label' => __( 'Cooperation Subheader Small 4', 'wpt' ),
+                'section' => 'fp_cooperation',
+                'settings' => 'fp_cooperation_subheader_small_4',
+                'type' => 'textarea',
+                'priority' => 75,
+                )
+            )
+        );
+        $wp_customize->add_control( new WP_Customize_Control(
+            $wp_customize,
+            'fp_cooperation_control_icon_1',
+            array(
+                'label' => __( 'Cooperation Icon 1', 'wpt' ),
+                'section' => 'fp_cooperation',
+                'settings' => 'fp_cooperation_icon_1',
+                'type' => 'text',
+                'priority' => 80,
+                )
+            )
+        );
+        $wp_customize->add_control( new WP_Customize_Control(
+            $wp_customize,
+            'fp_cooperation_control_icon_2',
+            array(
+                'label' => __( 'Cooperation Icon 2', 'wpt' ),
+                'section' => 'fp_cooperation',
+                'settings' => 'fp_cooperation_icon_2',
+                'type' => 'text',
+                'priority' => 85,
+                )
+            )
+        );
+        $wp_customize->add_control( new WP_Customize_Control(
+            $wp_customize,
+            'fp_cooperation_control_icon_3',
+            array(
+                'label' => __( 'Cooperation Icon 3', 'wpt' ),
+                'section' => 'fp_cooperation',
+                'settings' => 'fp_cooperation_icon_3',
+                'type' => 'text',
+                'priority' => 90,
+                )
+            )
+        );
+        $wp_customize->add_control( new WP_Customize_Control(
+            $wp_customize,
+            'fp_cooperation_control_icon_4',
+            array(
+                'label' => __( 'Cooperation Icon 4', 'wpt' ),
+                'section' => 'fp_cooperation',
+                'settings' => 'fp_cooperation_icon_4',
+                'type' => 'text',
+                'priority' => 95,
                 )
             )
         );
