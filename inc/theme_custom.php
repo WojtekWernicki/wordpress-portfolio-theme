@@ -62,6 +62,13 @@
              'capability' => 'edit_theme_options',
             )
         );
+        $wp_customize->add_section( 'footer',
+        array(
+             'title' => __( 'Footer', 'wpt' ),
+             'priority' => 60,
+             'capability' => 'edit_theme_options',
+            )
+        );
 
         /**
          * II. Creating settings
@@ -293,7 +300,186 @@
             'transport' => 'postMessage',
             )
         );
-
+        /* fp_portfolio (Portfolio Section) */
+        $wp_customize->add_setting( 'fp_portfolio_header',
+        array(
+            'default' => 'Portfolio',
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_options',
+            'transport' => 'postMessage',
+            )
+        );
+        /* fp_skills (Skills Section) */
+        $wp_customize->add_setting( 'fp_skills_background',
+        array(
+            'default' => get_template_directory_uri().'/assets/img/computer.jpg',
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_options',
+            'transport' => 'postMessage',
+            )
+        );
+        $wp_customize->add_setting( 'fp_skills_header',
+        array(
+            'default' => 'Umiejętności',
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_options',
+            'transport' => 'postMessage',
+            )
+        );
+        $wp_customize->add_setting( 'fp_skills_subheader_1',
+        array(
+            'default' => 'Front-end Development',
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_options',
+            'transport' => 'postMessage',
+            )
+        );
+        $wp_customize->add_setting( 'fp_skills_subheader_2',
+        array(
+            'default' => 'Back-end Development',
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_options',
+            'transport' => 'postMessage',
+            )
+        );
+        $wp_customize->add_setting( 'fp_skills_subheader_3',
+        array(
+            'default' => 'Biblioteki, frameworki i narzędzia',
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_options',
+            'transport' => 'postMessage',
+            )
+        );
+        $wp_customize->add_setting( 'fp_skills_subheader_4',
+        array(
+            'default' => 'Języki',
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_options',
+            'transport' => 'postMessage',
+            )
+        );
+        $wp_customize->add_setting( 'fp_skills_textarea_1',
+        array(
+            'default' => '',
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_options',
+            'transport' => 'postMessage',
+            )
+        );
+        $wp_customize->add_setting( 'fp_skills_textarea_2',
+        array(
+            'default' => '',
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_options',
+            'transport' => 'postMessage',
+            )
+        );
+        $wp_customize->add_setting( 'fp_skills_textarea_3',
+        array(
+            'default' => '',
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_options',
+            'transport' => 'postMessage',
+            )
+        );
+        $wp_customize->add_setting( 'fp_skills_textarea_4',
+        array(
+            'default' => '',
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_options',
+            'transport' => 'postMessage',
+            )
+        );
+        /* fp_contact (Contact Section) */
+        $wp_customize->add_setting( 'fp_contact_header',
+        array(
+            'default' => 'Kontakt',
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_options',
+            'transport' => 'postMessage',
+            )
+        );
+        $wp_customize->add_setting( 'fp_contact_subheader_1',
+        array(
+            'default' => 'Wyślij wiadomość',
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_options',
+            'transport' => 'postMessage',
+            )
+        );
+        $wp_customize->add_setting( 'fp_contact_subheader_2',
+        array(
+            'default' => 'Social Media',
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_options',
+            'transport' => 'postMessage',
+            )
+        );
+        $wp_customize->add_setting( 'fp_contact_sm_fb',
+        array(
+            'default' => 'https://facebook.com/',
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_options',
+            'transport' => 'postMessage',
+            )
+        );
+        $wp_customize->add_setting( 'fp_contact_sm_tt',
+        array(
+            'default' => 'https://twitter.com/',
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_options',
+            'transport' => 'postMessage',
+            )
+        );
+        $wp_customize->add_setting( 'fp_contact_sm_ig',
+        array(
+            'default' => 'https://instagram.com/',
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_options',
+            'transport' => 'postMessage',
+            )
+        );
+        $wp_customize->add_setting( 'fp_contact_sm_gp',
+        array(
+            'default' => 'https://plus.google.com/',
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_options',
+            'transport' => 'postMessage',
+            )
+        );
+        $wp_customize->add_setting( 'fp_contact_sm_in',
+        array(
+            'default' => 'https://linkedin.com/',
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_options',
+            'transport' => 'postMessage',
+            )
+        );
+        $wp_customize->add_setting( 'fp_contact_sm_sc',
+        array(
+            'default' => 'https://snapchat.com/',
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_options',
+            'transport' => 'postMessage',
+            )
+        );
+        /* footer (Footer) */
+        $wp_customize->add_setting( 'footer_copy',
+        array(
+            'default' => '&copy; ' . date('Y') . ' Wojtek Wernicki',
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_options',
+            'transport' => 'postMessage',
+            )
+        );
+        $wp_customize->add_setting( 'footer_cookies',
+        array(
+            'default' => 'Ta strona używa plików cookies do celów statystycznych.',
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_options',
+            'transport' => 'postMessage',
+            )
+        );
 
         /**
          * III. Creating controls
@@ -633,7 +819,292 @@
                 )
             )
         );
-
+        /* fp_portfolio (Portfolio Section) */
+        $wp_customize->add_control( new WP_Customize_Control(
+            $wp_customize,
+            'fp_portfolio_control_header',
+            array(
+                'label' => __( 'Portfolio Header', 'wpt' ),
+                'section' => 'fp_portfolio',
+                'settings' => 'fp_portfolio_header',
+                'type' => 'text',
+                'priority' => 30,
+                )
+            )
+        );
+        /* fp_skills (Skills Section) */
+        $wp_customize->add_control( new WP_Customize_Image_Control(
+            $wp_customize,
+            'fp_skills_control_background',
+            array(
+                'label' => __( 'Skills Background', 'wpt' ),
+                'section' => 'fp_skills',
+                'settings' => 'fp_skills_background',
+                'priority' => 30,
+                )
+            )
+        );
+        $wp_customize->add_control( new WP_Customize_Control(
+            $wp_customize,
+            'fp_skills_control_header',
+            array(
+                'label' => __( 'Skills Header', 'wpt' ),
+                'section' => 'fp_skills',
+                'settings' => 'fp_skills_header',
+                'type' => 'text',
+                'priority' => 35,
+                )
+            )
+        );
+        $wp_customize->add_control( new WP_Customize_Control(
+            $wp_customize,
+            'fp_skills_control_subheader_1',
+            array(
+                'label' => __( 'Skills Subheader 1', 'wpt' ),
+                'section' => 'fp_skills',
+                'settings' => 'fp_skills_subheader_1',
+                'type' => 'text',
+                'priority' => 40,
+                )
+            )
+        );
+        $wp_customize->add_control( new WP_Customize_Control(
+            $wp_customize,
+            'fp_skills_control_subheader_2',
+            array(
+                'label' => __( 'Skills Subheader 2', 'wpt' ),
+                'section' => 'fp_skills',
+                'settings' => 'fp_skills_subheader_2',
+                'type' => 'text',
+                'priority' => 45,
+                )
+            )
+        );
+        $wp_customize->add_control( new WP_Customize_Control(
+            $wp_customize,
+            'fp_skills_control_subheader_3',
+            array(
+                'label' => __( 'Skills Subheader 3', 'wpt' ),
+                'section' => 'fp_skills',
+                'settings' => 'fp_skills_subheader_3',
+                'type' => 'text',
+                'priority' => 50,
+                )
+            )
+        );
+        $wp_customize->add_control( new WP_Customize_Control(
+            $wp_customize,
+            'fp_skills_control_subheader_4',
+            array(
+                'label' => __( 'Skills Subheader 4', 'wpt' ),
+                'section' => 'fp_skills',
+                'settings' => 'fp_skills_subheader_4',
+                'type' => 'text',
+                'priority' => 55,
+                )
+            )
+        );
+        $wp_customize->add_control( new WP_Customize_Control(
+            $wp_customize,
+            'fp_skills_control_textarea_1',
+            array(
+                'label' => __( 'Skills Textarea 1', 'wpt' ),
+                'section' => 'fp_skills',
+                'settings' => 'fp_skills_textarea_1',
+                'type' => 'textarea',
+                'priority' => 60,
+                )
+            )
+        );
+        $wp_customize->add_control( new WP_Customize_Control(
+            $wp_customize,
+            'fp_skills_control_textarea_2',
+            array(
+                'label' => __( 'Skills Textarea 2', 'wpt' ),
+                'section' => 'fp_skills',
+                'settings' => 'fp_skills_textarea_2',
+                'type' => 'textarea',
+                'priority' => 65,
+                )
+            )
+        );
+        $wp_customize->add_control( new WP_Customize_Control(
+            $wp_customize,
+            'fp_skills_control_textarea_3',
+            array(
+                'label' => __( 'Skills Textarea 3', 'wpt' ),
+                'section' => 'fp_skills',
+                'settings' => 'fp_skills_textarea_3',
+                'type' => 'textarea',
+                'priority' => 70,
+                )
+            )
+        );
+        $wp_customize->add_control( new WP_Customize_Control(
+            $wp_customize,
+            'fp_skills_control_textarea_4',
+            array(
+                'label' => __( 'Skills Textarea 4', 'wpt' ),
+                'section' => 'fp_skills',
+                'settings' => 'fp_skills_textarea_4',
+                'type' => 'textarea',
+                'priority' => 75,
+                )
+            )
+        );
+        /* fp_contact (Contact Section) */
+        $wp_customize->add_control( new WP_Customize_Control(
+            $wp_customize,
+            'fp_contact_control_header',
+            array(
+                'label' => __( 'Contact Header', 'wpt' ),
+                'section' => 'fp_contact',
+                'settings' => 'fp_contact_header',
+                'type' => 'text',
+                'priority' => 30,
+                )
+            )
+        );
+        $wp_customize->add_control( new WP_Customize_Control(
+            $wp_customize,
+            'fp_contact_control_subheader_1',
+            array(
+                'label' => __( 'Contact Subeader 1', 'wpt' ),
+                'section' => 'fp_contact',
+                'settings' => 'fp_contact_subheader_1',
+                'type' => 'text',
+                'priority' => 35,
+                )
+            )
+        );
+        $wp_customize->add_control( new WP_Customize_Control(
+            $wp_customize,
+            'fp_contact_control_subheader_2',
+            array(
+                'label' => __( 'Contact Subeader 2', 'wpt' ),
+                'section' => 'fp_contact',
+                'settings' => 'fp_contact_subheader_2',
+                'type' => 'text',
+                'priority' => 40,
+                )
+            )
+        );
+        $wp_customize->add_control( new WP_Customize_Control(
+            $wp_customize,
+            'fp_contact_control_sm_fb',
+            array(
+                'label' => __( 'Social Media Link - Facebook', 'wpt' ),
+                'section' => 'fp_contact',
+                'settings' => 'fp_contact_sm_fb',
+                'type' => 'text',
+                'priority' => 45,
+                )
+            )
+        );
+        $wp_customize->add_control( new WP_Customize_Control(
+            $wp_customize,
+            'fp_contact_control_sm_tt',
+            array(
+                'label' => __( 'Social Media Link - Twitter', 'wpt' ),
+                'section' => 'fp_contact',
+                'settings' => 'fp_contact_sm_tt',
+                'type' => 'text',
+                'priority' => 50,
+                )
+            )
+        );
+        $wp_customize->add_control( new WP_Customize_Control(
+            $wp_customize,
+            'fp_contact_control_sm_ig',
+            array(
+                'label' => __( 'Social Media Link - Instagram', 'wpt' ),
+                'section' => 'fp_contact',
+                'settings' => 'fp_contact_sm_ig',
+                'type' => 'text',
+                'priority' => 55,
+                )
+            )
+        );
+        $wp_customize->add_control( new WP_Customize_Control(
+            $wp_customize,
+            'fp_contact_control_sm_gp',
+            array(
+                'label' => __( 'Social Media Link - Google+', 'wpt' ),
+                'section' => 'fp_contact',
+                'settings' => 'fp_contact_sm_gp',
+                'type' => 'text',
+                'priority' => 60,
+                )
+            )
+        );
+        $wp_customize->add_control( new WP_Customize_Control(
+            $wp_customize,
+            'fp_contact_control_sm_in',
+            array(
+                'label' => __( 'Social Media Link - LinkedIn', 'wpt' ),
+                'section' => 'fp_contact',
+                'settings' => 'fp_contact_sm_in',
+                'type' => 'text',
+                'priority' => 65,
+                )
+            )
+        );
+        $wp_customize->add_control( new WP_Customize_Control(
+            $wp_customize,
+            'fp_contact_control_sm_sc',
+            array(
+                'label' => __( 'Social Media Link - Snapchat', 'wpt' ),
+                'section' => 'fp_contact',
+                'settings' => 'fp_contact_sm_sc',
+                'type' => 'text',
+                'priority' => 70,
+                )
+            )
+        );
+        /* footer (Footer) */
+        $wp_customize->add_control( new WP_Customize_Control(
+            $wp_customize,
+            'footer_control_copy',
+            array(
+                'label' => __( 'Copyright Info', 'wpt' ),
+                'section' => 'footer',
+                'settings' => 'footer_copy',
+                'type' => 'text',
+                'priority' => 30,
+                )
+            )
+        );
+        $wp_customize->add_control( new WP_Customize_Control(
+            $wp_customize,
+            'footer_control_cookies',
+            array(
+                'label' => __( 'Cookies Info', 'wpt' ),
+                'section' => 'footer',
+                'settings' => 'footer_cookies',
+                'type' => 'text',
+                'priority' => 35,
+                )
+            )
+        );
+    }
+    /**
+     * This will output the custom WordPress settings to the live theme's WP head.
+     *
+     * Used by hook: 'wp_head'
+     *
+     * @see add_action('wp_head',$func)
+     * @since WordPress Portfolio Theme 0.1.0
+     */
+    function header_output() {
+    ?>
+    <!--Customizer CSS-->
+    <style type="text/css">
+        #top .parallax { background-image: url('<?= get_theme_mod( 'fp_top_background', get_template_directory_uri().'/assets/img/triangle.jpg' ); ?>'); }
+        #wspolpraca .parallax { background-image: url('<?= get_theme_mod( 'fp_cooperation_background', get_template_directory_uri().'/assets/img/wspolpraca.jpg' ); ?>'); }
+        #skill .parallax { background-image: url('<?= get_theme_mod( 'fp_skills_background', get_template_directory_uri().'/assets/img/computer.jpg' ); ?>'); }
+    </style>
+    <!--/Customizer CSS-->
+    <?php
     }
 }
 
@@ -641,6 +1112,6 @@
 add_action( 'customize_register' , array( 'wpt_customization' , 'register' ) );
 
 // Output custom CSS to live site
-#add_action( 'wp_head' , array( 'wpt_customization', 'header_output' ) );
+add_action( 'wp_head' , array( 'wpt_customization', 'header_output' ) );
 
 ?>

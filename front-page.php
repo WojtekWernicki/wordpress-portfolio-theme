@@ -1,54 +1,35 @@
 <?php get_header(); ?>
     <div class="section" id="top">
         <div class="parallax">
-            <img src="<?= get_theme_mod( 'avatar_image_url', get_template_directory_uri().'/assets/img/avatar.jpg' ) ?>" alt="Avatar">
-            <h1 class="text-center">Siema! <br>
-                <small>Jestem Wojtek, web developer</small>
+            <img src="<?= get_theme_mod( 'fp_top_avatar', get_template_directory_uri().'/assets/img/avatar.jpg' ) ?>" alt="Avatar">
+            <h1 class="text-center"><?= get_theme_mod( 'fp_top_header', 'Siema!' ) ?> <br>
+                <small><?= get_theme_mod( 'fp_top_header_small', 'Jestem Wojtek, web developer' ) ?></small>
             </h1>
         </div>
     </div>
     <div class="section" id="o-mnie">
         <div class="container">
             <div class="row">
-                <h2 class="text-center">O mnie</h2>
+                <h2 class="text-center"><?= get_theme_mod( 'fp_about_header' ) ?></h2>
                 <div class="center-ver" id="column-content">
                     <div class="col-xs-12 col-md-6">
                         <div class="text-center">
-                            <p>Nazywam się <strong>Jan Wojciech Wernicki</strong>, ale mów mi Wojtek.</p>
-                            <p>Mam 19 lat, mieszkam w Szczecinie i uczę się w <strong>technikum informatycznym</strong>.</p>
-                            <p>Kocham <strong>web development</strong>, <strong>social media</strong> i herbatę.</p>
-                            <p>Moje pasje to Formuła 1, kultura japońska i <strong>Linux</strong>.</p>
+                            <?= get_theme_mod( 'fp_about_about_textarea' ) ?>
                         </div>
-                        <h3 class="text-center">Doświadczenie zawodowe</h3>
-                        <ul>
-                            <li>
-                                JAM Media <br>
-                                <strong>Web Developer &amp; Content Manager</strong>, Luty 2015 &ndash; Maj 2016 <br>
-                                <small>Korzystałem z: <strong>HTML5, CSS3, JavaScript, jQuery, PHP, mySQL, WordPress, Bootstrap</strong></small>
-                            </li>
-                        </ul>
-                        <h3 class="text-center">Edukacja</h3>
-                        <ul>
-                            <li>
-                                Free Code Camp <br>
-                                <strong>Full Stack Web Development Certification</strong>, 2016 &ndash; nadal
-                            </li>
-                            <li>
-                                Technikum Informatyczne SCI w Szczecinie <br>
-                                <strong>Technik informatyk</strong>, 2013 &ndash; 2017 <br>
-                                <small>Nauczyłem się i korzystałem z: <strong>HTML5, CSS3, JavaScript, jQuery, PHP, mySQL, Bootstrap, C++</strong></small>
-                            </li>
-                        </ul>
+                        <h3 class="text-center"><?= get_theme_mod( 'fp_about_subheader_work' ) ?></h3>
+                        <?= get_theme_mod( 'fp_about_work_textarea' ) ?>
+                        <h3 class="text-center"><?= get_theme_mod( 'fp_about_subheader_edu' ) ?></h3>
+                        <?= get_theme_mod( 'fp_about_edu_textarea' ) ?>
                     </div>
                     <div class="col-xs-12 col-md-6 text-center">
-                        <h3>Więcej informacji o mnie:</h3>
+                        <h3><?= get_theme_mod( 'fp_about_subheader_more' ) ?></h3>
 
                         <div class="flexbox-container">
-                            <a href="javascript:void(0)">
+                            <a href="fp_contact_sm_in">
                                 <i class="fa fa-linkedin fa-5x"></i>
                                 <small>LinkedIn</small>
                             </a>
-                            <a href="javascript:void(0)">
+                            <a href="<?= get_theme_mod( 'fp_about_more_bloglink' ) ?>">
                                 <i class="fa fa-desktop fa-5x"></i>
                                 <small>Blog</small>
                             </a>
@@ -60,7 +41,7 @@
                         </div>
 
                         <h3>Pliki do pobrania:</h3>
-                        <a href="javascript:void(0)" class="btn btn-primary btn-lg" role="button"><i class="fa fa-download fa-fw"></i> Pobierz CV</a>
+                        <a href="<?= get_theme_mod( 'fp_about_download_file' ) ?>" class="btn btn-primary btn-lg" role="button"><i class="fa fa-download fa-fw"></i> Pobierz CV</a>
                     </div>
                 </div>
             </div>
@@ -71,33 +52,33 @@
             <div class="container">
                 <div class="row">
                     <div class="blue-frame text-center">
-                        <h2>Dlaczego warto ze mną współpracować?</h2>
+                        <h2><?= get_theme_mod( 'fp_cooperation_header' ) ?></h2>
                         <div class="col-xs-12 col-sm-6 col-md-3">
-                            <i class="fa fa-html5 fa-5x"></i>
+                            <i class="fa <?= get_theme_mod( 'fp_cooperation_icon_1' ) ?> fa-5x"></i>
                             <h3>
-                                Najnowsze standardy <br>
-                                <small>Zawsze korzystam z najnowszych rozwiązań. Wszystkie moje prace powstają na bazie HTML5 i CSS3 oraz są responsywne</small>
+                                <?= get_theme_mod( 'fp_cooperation_subheader_1' ) ?> <br>
+                                <small><?= get_theme_mod( 'fp_cooperation_subheader_small_1' ) ?></small>
                             </h3>
                         </div>
                         <div class="col-xs-12 col-sm-6 col-md-3">
-                            <i class="fa fa-comments fa-5x"></i>
+                            <i class="fa <?= get_theme_mod( 'fp_cooperation_icon_2' ) ?> fa-5x"></i>
                             <h3>
-                                Komunikatywność <br>
-                                <small>W pracy jestem dla Ciebie zawsze dostępny i otwarty na wszelkie pomysły. Na pewno szybko znajdziemy ze sobą wspólny język</small>
+                                <?= get_theme_mod( 'fp_cooperation_subheader_2' ) ?> <br>
+                                <small><?= get_theme_mod( 'fp_cooperation_subheader_small_2' ) ?></small>
                             </h3>
                         </div>
                         <div class="col-xs-12 col-sm-6 col-md-3">
-                            <i class="fa fa-briefcase fa-5x"></i>
+                            <i class="fa <?= get_theme_mod( 'fp_cooperation_icon_3' ) ?> fa-5x"></i>
                             <h3>
-                                Doświadczenie <br>
-                                <small>Prawie 1,5 roku doświadczenia zawodowego w tworzeniu stron internetowych oraz kontaktach z klientami</small>
+                                <?= get_theme_mod( 'fp_cooperation_subheader_3' ) ?> <br>
+                                <small><?= get_theme_mod( 'fp_cooperation_subheader_small_3' ) ?></small>
                             </h3>
                         </div>
                         <div class="col-xs-12 col-sm-6 col-md-3">
-                            <i class="fa fa-heart fa-5x"></i>
+                            <i class="fa <?= get_theme_mod( 'fp_cooperation_icon_4' ) ?> fa-5x"></i>
                             <h3>
-                                Zaangażowanie <br>
-                                <small>W swoją pracę wkładam 100% mocy, wszystko dzięki mojej pasji do tworzenia stron.</small>
+                                <?= get_theme_mod( 'fp_cooperation_subheader_4' ) ?> <br>
+                                <small><?= get_theme_mod( 'fp_cooperation_subheader_small_4' ) ?></small>
                             </h3>
                         </div>
                     </div>
@@ -108,7 +89,7 @@
     <div class="section" id="portfolio">
         <div class="parallax">
             <div class="col-xs-12">
-                <h2 class="text-center">Portfolio</h2>
+                <h2 class="text-center"><?= get_theme_mod( 'fp_portfolio_header' ) ?></h2>
             </div>
             <div class="container">
                 <div class="row">
@@ -169,51 +150,22 @@
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12 blue-frame">
-                        <h2 class="text-center">Umiejętności</h2>
+                        <h2 class="text-center"><?= get_theme_mod( 'fp_skills_header' ) ?></h2>
                         <div class="col-xs-12 col-md-6 text-center">
-                            <h3>Front-end Development</h3>
-                            <ul class="list-unstyled">
-                                <li><strong>HTML5</strong></li>
-                                <li><strong>CSS3</strong></li>
-                                <li><strong>SASS</strong></li>
-                                <li><strong>JavaScript</strong></li>
-                            </ul>
+                            <h3><?= get_theme_mod( 'fp_portfolio_subheader_1' ) ?></h3>
+                            <?= get_theme_mod( 'fp_portfolio_textarea_1' ) ?>
 
-                            <h3>Back-end Development</h3>
-                            <ul class="list-unstyled">
-                                <li><strong>PHP7</strong></li>
-                                <li>mySQL</li>
-                            </ul>
+                            <h3><?= get_theme_mod( 'fp_portfolio_subheader_2' ) ?></h3>
+                            <?= get_theme_mod( 'fp_portfolio_textarea_1' ) ?>
                         </div>
                         <div class="col-xs-12 col-md-6 text-center">
-                            <h3>Biblioteki, frameworki i narzędzia</h3>
-                            <ul class="list-unstyled">
-                                <li>Angular2</li>
-                                <li><strong>Bootstrap</strong></li>
-                                <li><strong>GIT</strong></li>
-                                <li><strong>jQuery</strong></li>
-                                <li>npm</li>
-                                <li>Photoshop</li>
-                                <li><strong>WordPress</strong></li>
-                            </ul>
+                            <h3><?= get_theme_mod( 'fp_portfolio_subheader_3' ) ?></h3>
+                            <?= get_theme_mod( 'fp_portfolio_textarea_3' ) ?>
                         </div>
                         <div class="col-xs-12">
-                            <h3 class="text-center">Języki</h3>
+                            <h3 class="text-center"><?= get_theme_mod( 'fp_portfolio_subheader_4' ) ?></h3>
                             <div class="flexbox-container" id="languages">
-                                <ul class="list-unstyled">
-                                    <li>
-                                        <strong>Polski</strong> <br>
-                                        Język ojczysty
-                                    </li>
-                                    <li>
-                                        <strong>Angielski</strong> <br>
-                                        Średnio zaawansowany
-                                    </li>
-                                    <li>
-                                        <strong>Niemiecki</strong> <br>
-                                        Początkujący
-                                    </li>
-                                </ul>
+                                <?= get_theme_mod( 'fp_portfolio_textarea_4' ) ?>
                             </div>
                         </div>
                     </div>
@@ -226,11 +178,11 @@
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12">
-                        <h2 class="text-center">Kontakt</h2>
+                        <h2 class="text-center"><?= get_theme_mod( 'fp_contact_header' ) ?></h2>
                     </div>
                     <div class="col-xs-12 center-ver">
                         <div class="col-xs-12 col-md-6">
-                            <h3 class="text-center">Wyślij wiadomość</h3>
+                            <h3 class="text-center"><?= get_theme_mod( 'fp_contact_subheader_1' ) ?></h3>
                             <div class="text-center" id="messages">
                                 <div class="message" id="error">Coś się popsuło… Spróbuj wysłać wiadomość jeszcze raz.</div>
                                 <div class="message" id="success">Wiadomość wysłana pomyślnie!</div>
@@ -252,29 +204,29 @@
                             </form>
                         </div>
                         <div class="col-xs-12 col-md-6 text-center">
-                            <h3>Social Media</h3>
+                            <h3><?= get_theme_mod( 'fp_contact_subheader_2' ) ?></h3>
                             <div class="flexbox-container">
-                                <a href="<?= get_theme_mod( 'social_media_link_fb', 'https://facebook.com/' ); ?>">
+                                <a href="<?= get_theme_mod( 'fp_contact_sm_fb', 'https://facebook.com/' ); ?>">
                                     <i class="fa fa-facebook fa-5x"></i>
                                     <small>Facebook</small>
                                 </a>
-                                <a href="<?= get_theme_mod( 'social_media_link_tt', 'https://twitter.com/' ); ?>">
+                                <a href="<?= get_theme_mod( 'fp_contact_sm_tt', 'https://twitter.com/' ); ?>">
                                     <i class="fa fa-twitter fa-5x"></i>
                                     <small>Twitter</small>
                                 </a>
-                                <a href="<?= get_theme_mod( 'social_media_link_ig', 'https://instagram.com/' ); ?>">
+                                <a href="<?= get_theme_mod( 'fp_contact_sm_ig', 'https://instagram.com/' ); ?>">
                                     <i class="fa fa-instagram fa-5x"></i>
                                     <small>Instagram</small>
                                 </a>
-                                <a href="<?= get_theme_mod( 'social_media_link_gp', 'https://plus.google.com/' ); ?>">
+                                <a href="<?= get_theme_mod( 'fp_contact_sm_gp', 'https://plus.google.com/' ); ?>">
                                     <i class="fa fa-google-plus fa-5x"></i>
                                     <small>Google+</small>
                                 </a>
-                                <a href="<?= get_theme_mod( 'social_media_link_in', 'https://linkedin.com/' ); ?>">
+                                <a href="<?= get_theme_mod( 'fp_contact_sm_in', 'https://linkedin.com/' ); ?>">
                                     <i class="fa fa-linkedin fa-5x"></i>
                                     <small>LinkedIn</small>
                                 </a>
-                                <a href="<?= get_theme_mod( 'social_media_link_sc', 'https://snapchat.com/' ); ?>">
+                                <a href="<?= get_theme_mod( 'fp_contact_sm_sc', 'https://snapchat.com/' ); ?>">
                                     <i class="fa fa-snapchat fa-5x"></i>
                                     <small>Snapchat</small>
                                 </a>
@@ -286,9 +238,9 @@
         </div>
         <footer>
             <div id="copy">
-                <?= get_theme_mod( 'footer_section_copy', '&copy; 2017 Wojtek Wernicki' ); ?>
+                <?= get_theme_mod( 'footer_copy', '&copy; 2017 Wojtek Wernicki' ); ?>
             </div>
-            <div id="cookies"><?= get_theme_mod( 'footer_section_cookies', 'Ta strona używa plików cookies do celów statystycznych.' ) ?></div>
+            <div id="cookies"><?= get_theme_mod( 'footer_cookies', 'Ta strona używa plików cookies do celów statystycznych.' ) ?></div>
         </footer>
     </div>
 
