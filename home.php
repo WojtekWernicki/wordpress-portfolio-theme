@@ -12,7 +12,7 @@
                 <section>
                     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
                     <article>
-                        <img src="<?php the_post_thumbnail() ?>" alt="<?php get_post_meta( $image->id, '_wp_attachment_image_alt', true) ?>" class="img-responsive">
+                        <img src="<?= get_the_post_thumbnail_url() ?>" alt="<?php get_post_meta( $image->id, '_wp_attachment_image_alt', true) ?>" class="img-responsive">
                         <h2 class="text-center">
                             <a href="<?= get_permalink() ?>"><?php the_title(); ?></a> <br>
                             <small><?php the_time( 'j F Y' ) ?> | <?php the_category( ' ' ) ?></small>

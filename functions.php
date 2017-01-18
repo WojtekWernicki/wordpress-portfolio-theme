@@ -5,6 +5,7 @@ require_once('inc/theme_custom.php');
 #require_once('inc/theme_customization.php');
 
 add_theme_support('post-thumbnails');
+set_post_thumbnail_size( 1920, 600 );
 
 function register_wpt_menus() {
     register_nav_menus(
