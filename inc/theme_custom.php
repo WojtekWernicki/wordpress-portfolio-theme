@@ -69,6 +69,13 @@
              'capability' => 'edit_theme_options',
             )
         );
+        $wp_customize->add_section( 'misc',
+        array(
+             'title' => __( 'Misc.', 'wpt' ),
+             'priority' => 65,
+             'capability' => 'edit_theme_options',
+            )
+        );
 
         /**
          * II. Creating settings
@@ -475,6 +482,15 @@
         $wp_customize->add_setting( 'footer_cookies',
         array(
             'default' => 'Ta strona używa plików cookies do celów statystycznych.',
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_options',
+            'transport' => 'postMessage',
+            )
+        );
+        /* misc (Misc.) */
+        $wp_customize->add_setting( 'misc_404_img',
+        array(
+            'default' => '',
             'type' => 'theme_mod',
             'capability' => 'edit_theme_options',
             'transport' => 'postMessage',
@@ -1086,7 +1102,20 @@
                 )
             )
         );
+        /* misc (Misc.) */
+        $wp_customize->add_control( new WP_Customize_Image_Control(
+            $wp_customize,
+            'misc_control_404_img',
+            array(
+                'label' => __( '404 Error Image', 'wpt' ),
+                'section' => 'misc',
+                'settings' => 'misc_404_img',
+                'priority' => 30,
+                )
+            )
+        );
     }
+
     /**
      * This will output the custom WordPress settings to the live theme's WP head.
      *

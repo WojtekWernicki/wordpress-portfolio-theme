@@ -19,12 +19,14 @@ Use it to make something cool, have fun, and share what you've learned with othe
 /* 1. SELECTORS */
 html {
   font-size: 16px;
+  position: relative;
 }
 
 body {
   font-family: "Lato", sans-serif;
   font-size: 1rem;
-  min-height: 100vh;
+  min-height: calc(100vh - 50px);
+  margin-bottom: 50px;
 }
 
 section {
@@ -47,10 +49,40 @@ section article img {
   margin: 20px 0;
 }
 
+/* STYLES REQUIRED BY WORDPRESS THEME */
+
+img.alignright {
+    float: right;
+    margin: 0 0 1em 1em;
+}
+img.alignleft {
+    float: left;
+    margin: 0 1em 1em 0;
+}
+img.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.alignright {
+    float: right;
+}
+.alignleft {
+    float: left;
+}
+.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* END OF REQUIRED STYLES */
+
 footer {
   background-color: #0288D1;
   color: #FFFFFF;
   height: 50px;
+  position: absolute;
+  bottom: 0;
   padding: 10px 0;
   text-align: center;
   width: 100%;
@@ -474,6 +506,11 @@ h6 small {
 #kontakt footer #copy a, #kontakt footer #copy a:hover {
   color: #FFFFFF;
   text-decoration: none;
+}
+
+/* ERROR 404 */
+#error-404 {
+    margin-top: 30px;
 }
 
 /* 4. MEDIA QUERIES */
