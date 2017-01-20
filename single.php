@@ -13,7 +13,15 @@
                                 <small><?php the_time( 'j F Y' ) ?> | <?php the_category( ' ' ) ?></small>
                             </h1>
 
-                            <?php the_content(); ?>
+                            <?php
+                            the_content();
+
+                            if ( comments_open() || get_comments_number() ) :
+        						comments_template();
+        					endif;
+                            ?>
+
+
 
                         <?php endwhile; else : ?>
                             <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>

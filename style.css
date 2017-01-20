@@ -384,6 +384,12 @@ h6 small {
 }
 
 /* 3. IDs */
+
+/* ID REQUIRED BY DISQUS */
+#disqus_thread {
+    margin-top: 100px;
+}
+
 #top .parallax {
   background-image: url("../img/triangle.jpg");
   flex-direction: column;

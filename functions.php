@@ -31,6 +31,16 @@ function add_image_class($class){
 }
 add_filter('get_image_tag_class','add_image_class');
 
+function exclude_category_home( $query ) {
+    if ( $query->is_home ) {
+        $excluded_cat = get_cat_ID( 'portfolio' );
+        $query->set( 'cat', '-' . $excluded_cat . '' );
+    }
+    return $query;
+}
+
+add_filter( 'pre_get_posts', 'exclude_category_home' );
+
 add_action('init', 'register_wpt_menus');
 add_action('widgets_init', 'register_wpt_widgets');
 
