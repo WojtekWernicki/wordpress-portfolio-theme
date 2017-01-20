@@ -25,6 +25,12 @@ function register_wpt_widgets() {
     ));
 }
 
+function add_image_class($class){
+    $class .= ' img-responsive';
+    return $class;
+}
+add_filter('get_image_tag_class','add_image_class');
+
 add_action('init', 'register_wpt_menus');
 add_action('widgets_init', 'register_wpt_widgets');
 

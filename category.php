@@ -1,8 +1,7 @@
 <?php get_header(); ?>
     <div class="page-header text-center">
         <h1>
-            <?= get_bloginfo( 'name' ) ?> <br>
-            <small><?= get_bloginfo( 'description' ) ?></small>
+            <?php single_cat_title( '' ); ?>
         </h1>
     </div>
 
